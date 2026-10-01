@@ -1,1 +1,1 @@
-# bird-identification-system
+# bird-species-detection-system
