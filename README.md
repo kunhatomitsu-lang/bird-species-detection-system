@@ -1,6 +1,6 @@
 # bird-species-detection-system
 
-Classifying the two bird species (Mallard and Hooded Merganser) using transfer learning with EfficientNet-B0 in PyTorch.
+Classifying bird species (Mallard and Hooded Merganser) using transfer learning with EfficientNet-B0 in PyTorch.
 
 ## User Manual
 
