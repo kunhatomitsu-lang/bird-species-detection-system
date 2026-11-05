@@ -1,14 +1,3 @@
----
-title: Wetlands Birds Detector
-emoji: 
-colorFrom: green
-colorTo: gray
-sdk: gradio
-sdk_version: "4.0.0"
-app_file: app.py
-pinned: false
----
-
 # Wetlands Birds Detector
 
 AI web application to identify 6 distinct wetland bird species in real time using a fine-tuned EfficientNet-B0 model and a Gradio user interface.
