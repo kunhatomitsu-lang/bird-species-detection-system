@@ -39,7 +39,7 @@ pip install torch torchvision scikit-learn numpy pandas matplotlib seaborn pillo
 ```
 
 ### Required Files
-NOTE: 'the bird-species-detection-system_v2.0.ipynb' file is the old version which identifies only 2 species and should not be used.
+NOTE: 'the bird-species-detection-system.ipynb' file is the old version which identifies only 2 species and should not be used.
 The following files are required:
 
 - `bird-species-detection-system_v2.0.ipynb`
