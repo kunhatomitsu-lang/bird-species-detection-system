@@ -1,6 +1,20 @@
+# Student Information 
+
+Peter Kyaw Okkar 35933802 
+
+Rivera Rahna Jenell Manzano 35911072 
+
+Gu Qiyu 35139306 
+
 # bird-species-detection-system
 
-Classifying the two bird species (Mallard and Hooded Merganser) using transfer learning with EfficientNet-B0 in PyTorch.
+Classifying the six wetland habitat bird species using transfer learning with EfficientNet-B0 in PyTorch. This is the model training section of the Bird Watcher AI Assistant.
+- Hooded Merganser
+- Black Crowned Night Heron
+- Cormorant
+- Common Mallard
+- Common Kingfisher
+- Marsh Sandpiper
 
 ## User Manual
 
@@ -25,10 +39,10 @@ pip install torch torchvision scikit-learn numpy pandas matplotlib seaborn pillo
 ```
 
 ### Required Files
-
+NOTE: 'the bird-species-detection-system_v2.0.ipynb' file is the old version which identifies only 2 species and should not be used.
 The following files are required:
 
-- `bird-species-detection-system.ipynb`
+- `bird-species-detection-system_v2.0.ipynb`
 - The bird image dataset, provided as `bird_data.zip`
 
 The notebook file contains the Python source code, while the zip archive contains the colour and segmentation images used for training, validation and testing.
@@ -37,14 +51,13 @@ The dataset file name and paths must match the file names used in the notebook c
 
 ```
 /content/bird_data.zip
-/content/bird_data/color/
-/content/bird_data/segmentation/
+
 ```
 
 ### Running the Project
 
 1. Open Google Colab or Jupyter Notebook.
-2. Open `bird-species-detection-system.ipynb`.
+2. Open `bird-species-detection-system_v2.0.ipynb`.
 3. If Google Colab is used, mount Google Drive (`drive.mount('/content/drive')`) and upload `bird_data.zip` to the Colab working directory so that it sits at `/content/bird_data.zip`.
 4. Run the package installation cell if required.
 5. Run all notebook cells from top to bottom in order.
@@ -58,17 +71,14 @@ The dataset file name and paths must match the file names used in the notebook c
 
 ### Dataset
 
-The dataset contains 120 colour images and 120 segmentation masks, 60 of each species, split evenly between two classes:
+The dataset contains 641 colour images with 6 classes:
 
-- `087.Mallard`
-- `089.Hooded_Merganser`
-
-Colour images are supplied in varying resolutions and are converted to RGB, resized to fit a 224 × 224 square with the aspect ratio preserved, and padded with black where needed. Segmentation masks are resized with nearest-neighbour interpolation and kept as single-channel grayscale.
-
-Class labels are assigned alphabetically by the image folder loader:
-
-- `087.Mallard` = 0
-- `089.Hooded_Merganser` = 1
+- `mallard`
+- `hooded merganser`
+- 'black crowned night heron'
+- 'common kingfisher'
+- 'greater cormorant'
+- 'masrh sandpiper' 
 
 ### Data Integrity Checks
 
@@ -87,9 +97,9 @@ The notebook trains an EfficientNet-B0 backbone pre-trained on ImageNet, with it
 Training uses:
 
 - Stratified 5-fold cross-validation on a 100-image train/validation pool
-- A 20-image held-out test set (10 per class), split off before cross-validation so test images are never seen during training
+- A 64-image held-out test set, split off before cross-validation so test images are never seen during training
 - AdamW with discriminative learning rates — 1e-4 for the unfrozen backbone blocks, 1e-3 for the new classification head — plus weight decay 1e-4
-- 25 epochs per fold, batch size 16
+- 10 epochs per fold, batch size 16
 - Random horizontal flip, rotation (±15°), colour jitter and random resized crop as training augmentation
 - ImageNet normalisation for both training and evaluation
 
@@ -109,34 +119,47 @@ After the notebook is executed successfully, the user should be able to see:
 - Confusion Matrix and its heatmap visualisation
 - ROC Curve with AUC
 - Precision-Recall Curve with average precision
-- An interactive widget for classifying individual held-out images with confidence scores
 
 The current model achieves approximately:
 
-**Training Accuracy: 100%**
-**Testing Accuracy: 95.0% (19/20)**
+**Training Accuracy: 78.98%**
+**Testing Accuracy: 89.06%**
 
 Five-fold cross-validation accuracy lands around the same level, with the per-fold best validation accuracy typically between 0.90 and 1.00. The held-out test classification report is:
 
 ```
-                      precision    recall  f1-score   support
+                           precision    recall  f1-score   support
 
-         087.Mallard      1.000     0.900     0.947        10
-089.Hooded_Merganser      0.909     1.000     0.952        10
+black crowned night heron       0.87      0.81      0.84        16
+        common kingfisher       0.90      1.00      0.95         9
+        greater cormorant       0.92      0.86      0.89        14
+         hooded merganser       0.86      1.00      0.92         6
+                  mallard       1.00      1.00      1.00         6
+          marsh sandpiper       0.85      0.85      0.85        13
 
-            accuracy                          0.950        20
-           macro avg      0.955     0.950     0.950        20
-        weighted avg      0.955     0.950     0.950        20
+                 accuracy                           0.89        64
+                macro avg       0.90      0.92      0.91        64
+             weighted avg       0.89      0.89      0.89        64
 ```
 
 Confusion matrix:
 
 ```
-[[ 9  1]
- [ 0 10]]
+[[ 13	1	0	1	0	1]
+[0	9	0	0	0	0]
+[1	0	12	0	0	1]
+[0	0	0	6	0	0]
+[0	0	0	0	6	0]
+[1	0	1	0	0	11]]
+ 
 ```
 
-One Mallard is misclassified as a Hooded Merganser; no Merganser is misclassified. These results show the performance of the transfer-learning model in classifying Mallard and Hooded Merganser images.
+Common Kingfisher: All 9 images were correctly classified (100%).
+Hooded Merganser: All 6 images were correctly classified (100%).
+Mallard: All 6 images were correctly classified (100%).
+Black Crowned Night Heron: 13 out of 16 images were correctly classified (81.25%).
+Greater Cormorant: 12 out of 14 images were correctly classified (85.71%).
+Marsh Sandpiper: 11 out of 13 images were correctly classified (84.62%).
 
 Note on interpreting these figures: training accuracy reaches 100% by the later epochs, which is a sign of the model memorising this very small dataset (100 training images). The held-out and cross-validation numbers are the ones that reflect genuine generalisation.
 
