@@ -13,15 +13,29 @@ license: mit
 
 # Wetlands Birds Detector
 
+AI web application to identify 6 distinct wetland bird species in real time using a fine-tuned EfficientNet-B0 model and a Gradio user interface.
+
 Written & Maintained By:
 
 - Kyaw Okkar (Peter ~ 35933802)
 - Rivera (Rahna ~ 35911072)
 - Gu (QIyu ~ 35139306)
 
-Note: The initial Default Gradio Interface (containers) was produced using Gen-AI (Gemini), but the CSS and other stylistic choices such as color scheme, readjusting of layout, and fonts were edited manually. 
+# Gen-AI Usage 
 
-AI web application to identify 6 distinct wetland bird species in real time using a fine-tuned EfficientNet-B0 model and a Gradio user interface.
+We used Gemini to assist in designing, debugging, and refining the Gradio user interface for the bird species detection project, focusing on the following three areas:
+
+Interface Layout and Components: Gemini helped us structure the Gradio layout, guiding us on how to set up image input components, output display components for the confidence scores, and clean button controls for real-time inference.
+Safety and Confidence Gate: We utilized Gemini to review and refine the logical threshold gate, ensuring that predictions below the confidence threshold correctly trigger the safety fallback and display an unrecognized species message.
+Local and Cloud Deployment: Gemini assisted in preparing the configuration metadata for Hugging Face Spaces, structuring the local virtual environment setup, and troubleshooting dependency management via requirements.txt.
+
+We reviewed the suggestions provided by Gemini, made necessary manual adjustments to the CSS and layout styling, and re-tested the application to verify the results.
+
+Prompts used:
+
+How do I structure a Gradio interface with an image input and a confidence verification threshold gate?
+How should I format the Hugging Face YAML metadata in my README.md file for a Gradio app?
+What are the exact command prompt steps to create a local virtual environment and install my requirements.txt for local testing?
 
 ---
 
