@@ -33,11 +33,14 @@ We reviewed the suggestions provided by Gemini, made necessary manual adjustment
 
 Prompts used:
 
-How do I structure a Gradio interface with an image input and a confidence verification threshold gate?
-How should I format the Hugging Face YAML metadata in my README.md file for a Gradio app?
-What are the exact command prompt steps to create a local virtual environment and install my requirements.txt for local testing?
-
----
+- How do I structure a Gradio interface with an image input and a confidence verification threshold gate?
+- How should I format the Hugging Face YAML metadata in my README.md file for a Gradio app?
+- What are the exact command prompt steps to create a local virtual environment and install my requirements.txt for local testing?
+- How do I activate and run my virtual environment commands step by step in the Windows Command Prompt?
+- How can I clean up my Git repository by removing training notebooks and zip files before deploying the lightweight UI?
+- How do I shut down the local server running my app, and will I need to reinstall my requirements every time I restart it?
+- Can you check my README.md draft to see if it includes the mandatory Hugging Face YAML metadata?
+- How do I write the exact YAML configuration block for a Gradio space using Python 3.12 and Gradio version 6.31.0?
 
 ## Supported Bird Species
 The model is trained to recognize the following 6 species with a strict 70% confidence verification gate:
