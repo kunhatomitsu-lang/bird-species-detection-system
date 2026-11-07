@@ -1,5 +1,10 @@
 # bird-species-detection-system
 
+Written & Maintained By: 
+- Kyaw Okkar (Peter ~ 35933802)
+- Rivera (Rahna ~ 35911072)
+- Gu (QIyu ~ 35139306)
+
 Classifying bird species (Mallard and Hooded Merganser) using transfer learning with EfficientNet-B0 in PyTorch.
 
 ## User Manual
