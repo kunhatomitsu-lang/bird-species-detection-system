@@ -51,7 +51,6 @@ The dataset file name and paths must match the file names used in the notebook c
 
 ```
 /content/bird_data.zip
-
 ```
 
 ### Running the Project
@@ -75,10 +74,10 @@ The dataset contains 641 colour images with 6 classes:
 
 - `mallard`
 - `hooded merganser`
-- 'black crowned night heron'
-- 'common kingfisher'
-- 'greater cormorant'
-- 'masrh sandpiper' 
+- `black crowned night heron`
+- `common kingfisher`
+- `greater cormorant`
+- `marsh sandpiper` 
 
 ### Data Integrity Checks
 
@@ -160,8 +159,6 @@ Mallard: All 6 images were correctly classified (100%).
 Black Crowned Night Heron: 13 out of 16 images were correctly classified (81.25%).
 Greater Cormorant: 12 out of 14 images were correctly classified (85.71%).
 Marsh Sandpiper: 11 out of 13 images were correctly classified (84.62%).
-
-Note on interpreting these figures: training accuracy reaches 100% by the later epochs, which is a sign of the model memorising this very small dataset (100 training images). The held-out and cross-validation numbers are the ones that reflect genuine generalisation.
 
 ### Troubleshooting
 
