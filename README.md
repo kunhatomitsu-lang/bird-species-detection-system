@@ -1,3 +1,16 @@
+---
+title: Bird Watcher Demonstration Space
+emoji: 🐠
+colorFrom: red
+colorTo: gray
+sdk: gradio
+sdk_version: 6.31.0
+python_version: '3.12'
+app_file: app.py
+pinned: false
+license: mit
+---
+
 # Wetlands Birds Detector
 
 Written & Maintained By:
@@ -65,4 +78,4 @@ Open the local URL provided in your terminal (typically https://127.0.0.1:7860) 
 
 To prevent hallucination or false matches on unrelated photos, the application enforces a 60% confidence threshold:
 1. **>=60% Confidence:** Displays the matches species name and full probability breakdown.
-2. **670% Confidence:** Triggers a safety fallback and flags the input as "Unrecognized Species".
+2. **<60% Confidence:** Triggers a safety fallback and flags the input as "Unrecognized Species".
