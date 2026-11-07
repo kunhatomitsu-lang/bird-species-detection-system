@@ -6,6 +6,8 @@ Written & Maintained By:
 - Rivera (Rahna ~ 35911072)
 - Gu (QIyu ~ 35139306)
 
+Note: The initial Default Gradio Interface (containers) was produced using Gen-AI (Gemini), but the CSS and other stylistic choices such as color scheme, readjusting of layout, and fonts were edited manually. 
+
 AI web application to identify 6 distinct wetland bird species in real time using a fine-tuned EfficientNet-B0 model and a Gradio user interface.
 
 ---
