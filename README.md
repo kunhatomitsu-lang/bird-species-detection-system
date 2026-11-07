@@ -6,6 +6,33 @@ Rivera Rahna Jenell Manzano 35911072
 
 Gu Qiyu 35139306 
 
+# GenAI Usage
+
+## RAHNA
+Gemini was used to assist with the code writing in the following sections:
+Preprocessing - fixing any errors in the code, adding a corrupted image check and performing image preprocessing 
+
+Prompts used: 
+- 'how do i add a corrupted file check for the image files?'
+- 'The images need to be in 224x224 rgb format for the model, how do i achieve this for all of the images in the dataset?'
+  
+## QIYU
+ChatGPT was to assist in debugging, reviewing, and modifying Python code within Google Colab, focusing on the following three areas:
+
+1. Dataset Debugging: ChatGPT helped me troubleshoot an issue caused by an extra image in the dataset and provided guidance on how to verify the total image count and identify potential problems.
+
+2. 5-Fold Cross-Validation: I utilized ChatGPT to review and refine my 5-fold cross-validation code, specifically regarding how the dataset is partitioned into training and validation sets.
+
+3. Model Evaluation: ChatGPT assisted in verifying that the model evaluation code correctly generates the expected metrics—including accuracy, precision, recall, F1-score, and the confusion matrix.
+
+The suggestions provided by ChatGPT were reviewed and I made necessary adjustments, and re-ran the notebook to verify the results.
+
+Prompts used:
+- I have an extra image in my bird classification dataset, which is causing errors in my code; how should I resolve this?
+- Could you help me check if my 5-fold cross-validation code is implemented correctly?
+- Could you verify whether the model test results and evaluation metrics are being calculated and displayed correctly?
+
+
 # bird-species-detection-system
 
 Classifying the six wetland habitat bird species using transfer learning with EfficientNet-B0 in PyTorch. This is the model training section of the Bird Watcher AI Assistant.
