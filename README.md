@@ -150,14 +150,18 @@ Confusion matrix:
 [0	0	0	6	0	0]
 [0	0	0	0	6	0]
 [1	0	1	0	0	11]]
- 
 ```
 
 Common Kingfisher: All 9 images were correctly classified (100%).
+
 Hooded Merganser: All 6 images were correctly classified (100%).
+
 Mallard: All 6 images were correctly classified (100%).
+
 Black Crowned Night Heron: 13 out of 16 images were correctly classified (81.25%).
+
 Greater Cormorant: 12 out of 14 images were correctly classified (85.71%).
+
 Marsh Sandpiper: 11 out of 13 images were correctly classified (84.62%).
 
 ### Troubleshooting
