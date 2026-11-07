@@ -1,5 +1,11 @@
 # Wetlands Birds Detector
 
+Written & Maintained By:
+
+- Kyaw Okkar (Peter ~ 35933802)
+- Rivera (Rahna ~ 35911072)
+- Gu (QIyu ~ 35139306)
+
 AI web application to identify 6 distinct wetland bird species in real time using a fine-tuned EfficientNet-B0 model and a Gradio user interface.
 
 ---
