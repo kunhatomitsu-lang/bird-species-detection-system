@@ -25,9 +25,9 @@ Written & Maintained By:
 
 We used Gemini to assist in designing, debugging, and refining the Gradio user interface for the bird species detection project, focusing on the following three areas:
 
-Interface Layout and Components: Gemini helped us structure the Gradio layout, guiding us on how to set up image input components, output display components for the confidence scores, and clean button controls for real-time inference.
-Safety and Confidence Gate: We utilized Gemini to review and refine the logical threshold gate, ensuring that predictions below the confidence threshold correctly trigger the safety fallback and display an unrecognized species message.
-Local and Cloud Deployment: Gemini assisted in preparing the configuration metadata for Hugging Face Spaces, structuring the local virtual environment setup, and troubleshooting dependency management via requirements.txt.
+- Interface Layout and Components: Gemini helped us structure the Gradio layout, guiding us on how to set up image input components, output display components for the confidence scores, and clean button controls for real-time inference.
+- Safety and Confidence Gate: We utilized Gemini to review and refine the logical threshold gate, ensuring that predictions below the confidence threshold correctly trigger the safety fallback and display an unrecognized species message.
+- Local and Cloud Deployment: Gemini assisted in preparing the configuration metadata for Hugging Face Spaces, structuring the local virtual environment setup, and troubleshooting dependency management via requirements.txt.
 
 We reviewed the suggestions provided by Gemini, made necessary manual adjustments to the CSS and layout styling, and re-tested the application to verify the results.
 
